@@ -26,7 +26,7 @@ import random
 ########
 
 from torch.autograd import Variable
-from warpctc_pytorch import CTCLoss
+#from warpctc_pytorch import CTCLoss
 
 from data.bucketing_sampler import BucketingSampler, SpectrogramDatasetWithLength
 from data.data_loader import AudioDataLoader, SpectrogramDataset
@@ -237,7 +237,7 @@ def main():
 
     ########
     #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.learning_rate_decay_epochs, gamma=args.learning_rate_decay_rate)
-    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.99)
+    #scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.99)
     ########
 
     ########
@@ -342,7 +342,7 @@ def main():
 
     for epoch in range(start_epoch, args.epochs):
         ########
-        scheduler.step()
+        #scheduler.step()
         optim_state_now = optimizer.state_dict()
         print('\nLEARNING RATE: {lr:.6f}'.format(lr=optim_state_now['param_groups'][0]['lr']))
         class_accu.reset()
