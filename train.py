@@ -323,8 +323,8 @@ def main():
     if args.stride == 4: multiplier = 1  # (Should be 1.5...)
 
     #sample_time_steps = int(args.sample_miliseconds / 10)
-    loss_begin = int(args.crop_begin / (20 * args.stride))
-    loss_end = -int(args.crop_end / (20 * args.stride)) or None
+    loss_begin = round(args.crop_begin / (10 * args.stride))
+    loss_end = -round(args.crop_end / (10 * args.stride)) or None
 
     print("LOSS BEGIN:", loss_begin)
     print("LOSS END:", loss_end)
